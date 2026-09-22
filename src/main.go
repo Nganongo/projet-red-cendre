@@ -18,7 +18,8 @@ func main() {
 		fmt.Println("\n ==== MENU ====")
 		fmt.Println("1. Afficher les informations")
 		fmt.Println("2. Acceder a l'inventaire")
-		fmt.Println("3. Quitter")
+		fmt.Println("3. Acceder au marchand")
+		fmt.Println("4. Quitter")
 		fmt.Print(" Votre choix: ")
 
 		choix, _ := reader.ReadString('\n')
@@ -30,6 +31,8 @@ func main() {
 		case "2":
 			character.AccessInventory(monper)
 		case "3":
+			character.Marchand(monper, reader)
+		case "4":
 			fmt.Println("A Bientot !")
 			return
 		default:
@@ -38,5 +41,3 @@ func main() {
 
 	}
 }
-
-//test

@@ -1,6 +1,6 @@
 package character
 
-import "fmt"
+import ("fmt")
 
 type Personnage struct {
 	Nom        string
@@ -13,7 +13,7 @@ type Personnage struct {
 
 func InitCharacter(nom string) *Personnage {
 	return &Personnage{
-		Nom:        nom,
+		Nom:        "Paul",
 		Classe:     "Mutant",
 		Niveau:     1,
 		VieMax:     100,
