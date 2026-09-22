@@ -1,6 +1,14 @@
 package character
 
-import ("fmt")
+import (
+	"fmt"
+)
+
+type Equipement struct {
+	Tete  string
+	Torse string
+	Pieds string
+}
 
 type Personnage struct {
 	Nom        string
@@ -10,6 +18,7 @@ type Personnage struct {
 	VieAct     int
 	Inventaire []string
 	Argent     int
+	Equipement Equipement
 }
 
 func InitCharacter(nom string) *Personnage {
@@ -21,6 +30,11 @@ func InitCharacter(nom string) *Personnage {
 		VieAct:     50,
 		Inventaire: []string{"Kit médical", "Kit médical", "Kit médical"},
 		Argent:     100,
+		Equipement: Equipement{
+			Tete:  "",
+			Torse: "",
+			Pieds: "",
+		},
 	}
 }
 
