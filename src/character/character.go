@@ -9,6 +9,7 @@ type Personnage struct {
 	VieMax     int
 	VieAct     int
 	Inventaire []string
+	Argent     int
 }
 
 func InitCharacter(nom string) *Personnage {
@@ -19,6 +20,7 @@ func InitCharacter(nom string) *Personnage {
 		VieMax:     100,
 		VieAct:     50,
 		Inventaire: []string{"Kit médical", "Kit médical", "Kit médical"},
+		Argent:     100,
 	}
 }
 
@@ -28,4 +30,5 @@ func DisplayInfo(s *Personnage) {
 	fmt.Printf("Classe:      %s\n", s.Classe)
 	fmt.Printf("Niveau:      %d\n", s.Niveau)
 	fmt.Printf("PV:      %d/%d\n", s.VieAct, s.VieMax)
+	fmt.Printf("Argent:    %d\n", s.Argent)
 }

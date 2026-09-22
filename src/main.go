@@ -10,9 +10,8 @@ import (
 )
 
 func main() {
-	monper := character.InitCharacter("jordan")
-
 	reader := bufio.NewReader(os.Stdin)
+	monper := character.CharacterCreation(reader)
 
 	for {
 		fmt.Println("\n ==== MENU ====")
@@ -27,6 +26,7 @@ func main() {
 
 		switch choix {
 		case "1":
+
 			character.DisplayInfo(monper)
 		case "2":
 			character.AccessInventory(monper)
@@ -34,6 +34,7 @@ func main() {
 			character.Marchand(monper, reader)
 		case "4":
 			fmt.Println("A Bientot !")
+
 			return
 		default:
 			fmt.Println(" choix Invalide")
