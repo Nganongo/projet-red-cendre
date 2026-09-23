@@ -3,6 +3,7 @@ package character
 import (
 	"bufio"
 	"fmt"
+	"math/rand"
 	"strings"
 	"unicode"
 )
@@ -72,5 +73,8 @@ func CharacterCreation(reader *bufio.Reader) *Personnage {
 		Inventaire: []string{},
 		Argent:     100,
 		Skills:     []string{"coup de poing"},
+		Initiative: rand.Intn(20) + 1,
+		XpAct:      0,
+		XpMax:      50,
 	}
 }

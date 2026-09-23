@@ -27,6 +27,8 @@ func TakePot(s *Personnage) {
 		return
 	}
 
+	s.Inventaire = append(s.Inventaire[:index], s.Inventaire[index+1:]...)
+
 	s.VieAct += 50
 	if s.VieAct > s.VieMax {
 		s.VieAct = s.VieMax
