@@ -14,14 +14,15 @@ func AddInventaire(s *Personnage, item string) {
 func Marchand(s *Personnage, reader *bufio.Reader) {
 	for {
 		fmt.Printf("\n====== MARCHAND ====== (Votre argent : %d Or)\n", s.Argent)
-		fmt.Println("1. Kit médical (3 Or)")
-		fmt.Println("2. Sérum toxique (6 Or)")
-		fmt.Println("3. Livre de Sort: Boule de Feu (25 Or)")
-		fmt.Println("4. Fourrure de Loup (4 Or)")
-		fmt.Println("5. Peau de Troll (7 Or)")
-		fmt.Println("6. Cuir de Sanglier (3 Or)")
-		fmt.Println("7. Plume de Corbeau (1 Or)")
-		fmt.Println("8. Retour")
+		fmt.Println("1. kit medical (3 Or)")
+		fmt.Println("2. Serum toxique (6 Or)")
+		fmt.Println("3. livre de Sort: boule de feu (25 Or)")
+		fmt.Println("4. fourrure de loup (4 Or)")
+		fmt.Println("5. peau de troll (7 Or)")
+		fmt.Println("6. cuir de sanglier (3 Or)")
+		fmt.Println("7. plume de corbeau (1 Or)")
+		fmt.Println("8. potion de mana (8 Or)")
+		fmt.Println("9. retour")
 		fmt.Print("Votre choix : ")
 
 		choix, _ := reader.ReadString('\n')
@@ -32,27 +33,30 @@ func Marchand(s *Personnage, reader *bufio.Reader) {
 
 		switch choix {
 		case "1":
-			nomItem = "Kit médical"
+			nomItem = "kit medical"
 			prix = 3
 		case "2":
-			nomItem = "Sérum toxique"
+			nomItem = "serum toxique"
 			prix = 6
 		case "3":
-			nomItem = "Livre de Sort: Boule de Feu"
+			nomItem = "livre de sort: boule de feu"
 			prix = 25
 		case "4":
-			nomItem = "Fourrure de Loup"
+			nomItem = "fourrure de loup"
 			prix = 4
 		case "5":
-			nomItem = "Peau de Troll"
+			nomItem = "peau de troll"
 			prix = 7
 		case "6":
-			nomItem = "Cuir de Sanglier"
+			nomItem = "cuir de sanglier"
 			prix = 3
 		case "7":
-			nomItem = "Plume de Corbeau"
+			nomItem = "plume de corbeau"
 			prix = 1
 		case "8":
+			nomItem = "potion de mana"
+			prix = 8
+		case "9":
 			return
 		default:
 			fmt.Println("Choix invalide.")
@@ -71,8 +75,8 @@ func Marchand(s *Personnage, reader *bufio.Reader) {
 
 		s.Argent -= prix
 
-		if nomItem == "Livre de Sort: Boule de Feu" {
-			spellBook(s, "Boule de Feu")
+		if nomItem == "livre de sort: boule de feu" {
+			spellBook(s, "boule de feu")
 		} else {
 			AddInventaire(s, nomItem)
 		}

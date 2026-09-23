@@ -23,6 +23,8 @@ type Personnage struct {
 	Initiative int
 	XpAct      int
 	XpMax      int
+	Mana       int
+	ManaMax    int
 }
 
 func InitCharacter(nom string) *Personnage {
