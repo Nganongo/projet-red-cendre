@@ -65,18 +65,20 @@ func CharacterCreation(reader *bufio.Reader) *Personnage {
 	}
 
 	return &Personnage{
-		Nom:        nom,
-		Classe:     classe,
-		Niveau:     1,
-		VieMax:     viemax,
-		VieAct:     viemax / 2,
-		Inventaire: []string{},
-		Argent:     100,
-		Skills:     []string{"coup de poing"},
-		Initiative: rand.Intn(20) + 1,
-		XpAct:      0,
-		XpMax:      50,
-		Mana:       20,
-		ManaMax:    20,
+		Nom:           nom,
+		Classe:        classe,
+		Niveau:        1,
+		VieMax:        viemax,
+		VieAct:        viemax / 2,
+		Inventaire:    []string{},
+		Argent:        100,
+		Skills:        []string{"coup de poing"},
+		Initiative:    rand.Intn(20) + 1,
+		XpAct:         0,
+		XpMax:         50,
+		Mana:          20,
+		ManaMax:       20,
+		InventaireMax: 10,
+		UpgradesMax:   0,
 	}
 }

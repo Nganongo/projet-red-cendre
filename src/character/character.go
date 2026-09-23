@@ -11,31 +11,35 @@ type Equipement struct {
 }
 
 type Personnage struct {
-	Nom        string
-	Classe     string
-	Niveau     int
-	VieMax     int
-	VieAct     int
-	Inventaire []string
-	Argent     int
-	Equipement Equipement
-	Skills     []string
-	Initiative int
-	XpAct      int
-	XpMax      int
-	Mana       int
-	ManaMax    int
+	Nom           string
+	Classe        string
+	Niveau        int
+	VieMax        int
+	VieAct        int
+	Inventaire    []string
+	Argent        int
+	Equipement    Equipement
+	Skills        []string
+	Initiative    int
+	XpAct         int
+	XpMax         int
+	Mana          int
+	ManaMax       int
+	InventaireMax int
+	UpgradesMax   int
 }
 
 func InitCharacter(nom string) *Personnage {
 	return &Personnage{
-		Nom:        "Paul",
-		Classe:     "Mutant",
-		Niveau:     1,
-		VieMax:     100,
-		VieAct:     50,
-		Inventaire: []string{"kit medical, kit medical, kit medical"},
-		Argent:     100,
+		Nom:           "Paul",
+		Classe:        "Mutant",
+		Niveau:        1,
+		VieMax:        100,
+		VieAct:        50,
+		Inventaire:    []string{"kit medical, kit medical, kit medical"},
+		Argent:        100,
+		InventaireMax: 10,
+		UpgradesMax:   0,
 		Equipement: Equipement{
 			Tete:  "",
 			Torse: "",
@@ -51,9 +55,9 @@ func DisplayInfo(s *Personnage) {
 	fmt.Printf("Niveau:      %d\n", s.Niveau)
 	fmt.Printf("PV:      %d/%d\n", s.VieAct, s.VieMax)
 	fmt.Printf("Argent:    %d\n", s.Argent)
-	fmt.Println("=== SORTS MAÎTRISÉS ===")
+	fmt.Println("=== SKILL MAÎTRISÉS ===")
 	if len(s.Skills) == 0 {
-		fmt.Println("Aucun sort appris.")
+		fmt.Println("Aucun skill appris.")
 	} else {
 		for _, skill := range s.Skills {
 			fmt.Printf("- %s\n", skill)

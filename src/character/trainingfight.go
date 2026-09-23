@@ -7,7 +7,7 @@ import (
 
 func TrainingFight(perso *Personnage, reader *bufio.Reader) {
 	monstre := InitChienCendre()
-	fmt.Print(chienCendreArt)
+	fmt.Print(ChienCendreArt)
 	tour := 1
 
 	fmt.Printf("Initiative : %s = %d, %s = %d\n", perso.Nom, perso.Initiative, monstre.Nom, monstre.Initiative)
@@ -34,10 +34,10 @@ func TrainingFight(perso *Personnage, reader *bufio.Reader) {
 
 	}
 	if perso.VieAct <= 0 {
-		fmt.Print(defaiteArt)
+		fmt.Print(DefaiteArt)
 		fmt.Println("Vous avez été vaincu...")
 	} else {
-		fmt.Print(victoireArt)
+		fmt.Print(VictoireArt)
 		fmt.Println("Vous avez vaincu le", monstre.Nom, "!")
 		perso.XpAct += monstre.Xpdonnee
 		fmt.Printf("Vous gagnez %d XP ! (%d/%d)\n", monstre.Xpdonnee, perso.XpAct, perso.XpMax)
