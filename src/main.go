@@ -21,8 +21,8 @@ func main() {
 		fmt.Println("3. Acceder au marchand")
 		fmt.Println("4. Acceder au forgeron")
 		fmt.Println("5. Accéder au équipement")
-		fmt.Println("6. Entrainement")
-		fmt.Println("7. Quitter")
+		fmt.Println("6. Quitter")
+		fmt.Println("7. Entrainement")
 
 		fmt.Print(" Votre choix: ")
 
