@@ -57,7 +57,6 @@ func EquiperObjet(s *Personnage, reader *bufio.Reader) {
 
 	var nomObjet string
 
-	// Récupération de l'objet via son numéro
 	switch choixObjet {
 	case "1":
 		if len(s.Inventaire) >= 1 {
@@ -109,7 +108,6 @@ func EquiperObjet(s *Personnage, reader *bufio.Reader) {
 		return
 	}
 
-	// Équipement de l'objet, retrait de l'inventaire et renvoi de l'ancien équipement
 	switch nomObjet {
 	case "Chapeau de l'aventurier":
 		if s.Equipement.Tete != "" {

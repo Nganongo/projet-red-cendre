@@ -16,12 +16,13 @@ func Marchand(s *Personnage, reader *bufio.Reader) {
 		fmt.Printf("\n====== MARCHAND ====== (Votre argent : %d Or)\n", s.Argent)
 		fmt.Println("1. Kit médical (3 Or)")
 		fmt.Println("2. Sérum toxique (6 Or)")
-		fmt.Println("3. Livre de Sort: Boule de Feu (25 Or)")
+		fmt.Println("3. Molotov (25 Or)")
 		fmt.Println("4. Fourrure de Loup (4 Or)")
 		fmt.Println("5. Peau de Troll (7 Or)")
 		fmt.Println("6. Cuir de Sanglier (3 Or)")
 		fmt.Println("7. Plume de Corbeau (1 Or)")
-		fmt.Println("8. Retour")
+		fmt.Println("8. Augmentation d'inventaire (30 Or)")
+		fmt.Println("9. Retour")
 		fmt.Print("Votre choix : ")
 
 		choix, _ := reader.ReadString('\n')
@@ -38,7 +39,7 @@ func Marchand(s *Personnage, reader *bufio.Reader) {
 			nomItem = "Sérum toxique"
 			prix = 6
 		case "3":
-			nomItem = "Livre de Sort: Boule de Feu"
+			nomItem = "Molotov"
 			prix = 25
 		case "4":
 			nomItem = "Fourrure de Loup"
@@ -53,7 +54,10 @@ func Marchand(s *Personnage, reader *bufio.Reader) {
 			nomItem = "Plume de Corbeau"
 			prix = 1
 		case "8":
-			return
+    		nomItem = "Augmentation d'inventaire"
+   			 prix = 30
+		case "9":
+    		return
 		default:
 			fmt.Println("Choix invalide.")
 			continue
@@ -71,8 +75,10 @@ func Marchand(s *Personnage, reader *bufio.Reader) {
 
 		s.Argent -= prix
 
-		if nomItem == "Livre de Sort: Boule de Feu" {
+		if nomItem == "Molotov" {
 			spellBook(s, "Boule de Feu")
+		} else if nomItem == "Augmentation d'inventaire" {
+   			 UpgradeInventorySlot(s)
 		} else {
 			AddInventaire(s, nomItem)
 		}

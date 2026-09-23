@@ -21,8 +21,8 @@ func main() {
 		fmt.Println("3. Acceder au marchand")
 		fmt.Println("4. Acceder au forgeron")
 		fmt.Println("5. Accéder au équipement")
-		fmt.Println("6. Quitter")
-		fmt.Println("7. Entrainement")
+		fmt.Println("6. Entrainement")
+		fmt.Println("7. Quitter")
 
 		fmt.Print(" Votre choix: ")
 
@@ -42,10 +42,9 @@ func main() {
 		case "5":
 			character.AccessEquipement(monper, reader)
 		case "6":
-			fmt.Println("A Bientot !")
-		case "7":
 			character.TrainingFight(monper, reader)
-
+		case "7":
+			fmt.Println("A Bientot !")
 			return
 		default:
 			fmt.Println(" choix Invalide")

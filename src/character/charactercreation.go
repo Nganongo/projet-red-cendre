@@ -76,5 +76,7 @@ func CharacterCreation(reader *bufio.Reader) *Personnage {
 		Initiative: rand.Intn(20) + 1,
 		XpAct:      0,
 		XpMax:      50,
+		InventaireMax: 10,
+		UpgradesMax:   0,
 	}
 }
