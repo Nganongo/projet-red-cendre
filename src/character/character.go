@@ -19,6 +19,7 @@ type Personnage struct {
 	Inventaire []string
 	Argent     int
 	Equipement Equipement
+	Skills     []string
 }
 
 func InitCharacter(nom string) *Personnage {
@@ -45,4 +46,12 @@ func DisplayInfo(s *Personnage) {
 	fmt.Printf("Niveau:      %d\n", s.Niveau)
 	fmt.Printf("PV:      %d/%d\n", s.VieAct, s.VieMax)
 	fmt.Printf("Argent:    %d\n", s.Argent)
+	fmt.Println("=== SORTS MAÎTRISÉS ===")
+	if len(s.Skills) == 0 {
+		fmt.Println("Aucun sort appris.")
+	} else {
+		for _, skill := range s.Skills {
+			fmt.Printf("- %s\n", skill)
+		}
+	}
 }

@@ -53,7 +53,7 @@ func Marchand(s *Personnage, reader *bufio.Reader) {
 			nomItem = "Plume de Corbeau"
 			prix = 1
 		case "8":
-			return 
+			return
 		default:
 			fmt.Println("Choix invalide.")
 			continue
@@ -70,7 +70,13 @@ func Marchand(s *Personnage, reader *bufio.Reader) {
 		}
 
 		s.Argent -= prix
-		AddInventaire(s, nomItem)
-		fmt.Printf("✅ Vous avez acheté : %s pour %d Or.\n", nomItem, prix)
+
+		if nomItem == "Livre de Sort: Boule de Feu" {
+			spellBook(s, "Boule de Feu")
+		} else {
+			AddInventaire(s, nomItem)
+		}
+
+		fmt.Printf(" Vous avez acheté : %s pour %d Or.\n", nomItem, prix)
 	}
 }

@@ -13,6 +13,15 @@ func AccessEquipement(s *Personnage, reader *bufio.Reader) {
 		fmt.Printf("Torse : %s\n", s.Equipement.Torse)
 		fmt.Printf("Pieds : %s\n", s.Equipement.Pieds)
 		fmt.Println("--------------------------------")
+		fmt.Println("\n=== VOTRE INVENTAIRE ===")
+		if len(s.Inventaire) == 0 {
+			fmt.Println("(Inventaire vide)")
+		} else {
+			for i, item := range s.Inventaire {
+				fmt.Printf("%d. %s\n", i+1, item)
+			}
+		}
+		fmt.Println("---------------------------------")
 		fmt.Println("1. Équiper un objet depuis l'inventaire")
 		fmt.Println("2. Retour")
 		fmt.Print("Votre choix : ")
@@ -20,12 +29,13 @@ func AccessEquipement(s *Personnage, reader *bufio.Reader) {
 		choix, _ := reader.ReadString('\n')
 		choix = strings.TrimSpace(choix)
 
-		if choix == "1" {
+		switch choix {
+		case "1":
 			EquiperObjet(s, reader)
-		} else if choix == "2" {
+		case "2":
 			return
-		} else {
-			fmt.Println("Choix invalide.")
+		default:
+			fmt.Println("❌ Choix invalide !")
 		}
 	}
 }
@@ -36,33 +46,72 @@ func EquiperObjet(s *Personnage, reader *bufio.Reader) {
 		return
 	}
 
-	fmt.Println("\nObjets équipables dans votre inventaire :")
+	fmt.Println("\nObjets dans votre inventaire :")
 	for i, item := range s.Inventaire {
 		fmt.Printf("%d. %s\n", i+1, item)
 	}
-	fmt.Print("Entrez le nom EXACT de l'objet à équiper : ")
 
-	nomObjet, _ := reader.ReadString('\n')
-	nomObjet = strings.TrimSpace(nomObjet)
+	fmt.Print("Entrez le NUMÉRO de l'objet à équiper : ")
+	choixObjet, _ := reader.ReadString('\n')
+	choixObjet = strings.TrimSpace(choixObjet)
 
-	// Vérification si l'objet est bien dans l'inventaire
-	trouve := false
-	for _, item := range s.Inventaire {
-		if item == nomObjet {
-			trouve = true
-			break
+	var nomObjet string
+
+	// Récupération de l'objet via son numéro
+	switch choixObjet {
+	case "1":
+		if len(s.Inventaire) >= 1 {
+			nomObjet = s.Inventaire[0]
 		}
-	}
-
-	if !trouve {
-		fmt.Println("❌ Vous ne possédez pas cet objet.")
+	case "2":
+		if len(s.Inventaire) >= 2 {
+			nomObjet = s.Inventaire[1]
+		}
+	case "3":
+		if len(s.Inventaire) >= 3 {
+			nomObjet = s.Inventaire[2]
+		}
+	case "4":
+		if len(s.Inventaire) >= 4 {
+			nomObjet = s.Inventaire[3]
+		}
+	case "5":
+		if len(s.Inventaire) >= 5 {
+			nomObjet = s.Inventaire[4]
+		}
+	case "6":
+		if len(s.Inventaire) >= 6 {
+			nomObjet = s.Inventaire[5]
+		}
+	case "7":
+		if len(s.Inventaire) >= 7 {
+			nomObjet = s.Inventaire[6]
+		}
+	case "8":
+		if len(s.Inventaire) >= 8 {
+			nomObjet = s.Inventaire[7]
+		}
+	case "9":
+		if len(s.Inventaire) >= 9 {
+			nomObjet = s.Inventaire[8]
+		}
+	case "10":
+		if len(s.Inventaire) >= 10 {
+			nomObjet = s.Inventaire[9]
+		}
+	default:
+		fmt.Println("❌ Numéro invalide !")
 		return
 	}
 
-	// Logique d'équipement selon l'objet
+	if nomObjet == "" {
+		fmt.Println("❌ Cet emplacement n'existe pas !")
+		return
+	}
+
+	// Équipement de l'objet, retrait de l'inventaire et renvoi de l'ancien équipement
 	switch nomObjet {
 	case "Chapeau de l'aventurier":
-		// Si un objet était déjà équipé à la Tête, on le réintègre dans l'inventaire
 		if s.Equipement.Tete != "" {
 			AddInventaire(s, s.Equipement.Tete)
 		}
@@ -93,6 +142,6 @@ func EquiperObjet(s *Personnage, reader *bufio.Reader) {
 		fmt.Println("🥾 Bottes renforcées équipées ! (+15 PV Max)")
 
 	default:
-		fmt.Println("❌ Cet objet ne peut pas être équipé.")
+		fmt.Printf("❌ %s ne peut pas être équipé !\n", nomObjet)
 	}
 }

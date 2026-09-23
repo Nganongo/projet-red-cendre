@@ -71,5 +71,6 @@ func CharacterCreation(reader *bufio.Reader) *Personnage {
 		VieAct:     viemax / 2,
 		Inventaire: []string{},
 		Argent:     100,
+		Skills:     []string{"coup de poing"},
 	}
 }
