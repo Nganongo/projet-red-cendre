@@ -53,7 +53,7 @@ func Marchand(s *Personnage, reader *bufio.Reader) {
 			nomItem = "Plume de Corbeau"
 			prix = 1
 		case "8":
-			return 
+			return
 		default:
 			fmt.Println("Choix invalide.")
 			continue

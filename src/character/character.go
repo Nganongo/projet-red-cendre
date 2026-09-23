@@ -19,6 +19,9 @@ type Personnage struct {
 	Inventaire []string
 	Argent     int
 	Equipement Equipement
+	Initiative int
+	XpAct      int
+	XpMax      int
 }
 
 func InitCharacter(nom string) *Personnage {
