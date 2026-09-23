@@ -20,8 +20,9 @@ func main() {
 		fmt.Println("2. Acceder a l'inventaire")
 		fmt.Println("3. Acceder au marchand")
 		fmt.Println("4. Acceder au forgeron")
-		fmt.Println("5. Quitter")
+		fmt.Println("5. Accéder au équipement")
 		fmt.Println("6. Entrainement")
+		fmt.Println("7. Quitter")
 
 		fmt.Print(" Votre choix: ")
 
@@ -39,8 +40,10 @@ func main() {
 		case "4":
 			character.Forgeron(monper, reader)
 		case "5":
-			fmt.Println("A Bientot !")
+			character.AccessEquipement(monper, reader)
 		case "6":
+			fmt.Println("A Bientot !")
+		case "7":
 			character.TrainingFight(monper, reader)
 
 			return

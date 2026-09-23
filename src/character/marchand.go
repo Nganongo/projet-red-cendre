@@ -70,7 +70,13 @@ func Marchand(s *Personnage, reader *bufio.Reader) {
 		}
 
 		s.Argent -= prix
-		AddInventaire(s, nomItem)
-		fmt.Printf("✅ Vous avez acheté : %s pour %d Or.\n", nomItem, prix)
+
+		if nomItem == "Livre de Sort: Boule de Feu" {
+			spellBook(s, "Boule de Feu")
+		} else {
+			AddInventaire(s, nomItem)
+		}
+
+		fmt.Printf(" Vous avez acheté : %s pour %d Or.\n", nomItem, prix)
 	}
 }
