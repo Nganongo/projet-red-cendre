@@ -91,3 +91,5 @@ func Marchand(s *Personnage, reader *bufio.Reader) {
 		fmt.Printf(" Vous avez acheté : %s pour %d Or.\n", nomItem, prix)
 	}
 }
+
+// mon comme
