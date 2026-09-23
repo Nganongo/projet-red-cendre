@@ -11,6 +11,7 @@ import (
 
 func main() {
 	reader := bufio.NewReader(os.Stdin)
+	fmt.Print(titre)
 	monper := character.CharacterCreation(reader)
 
 	for {
