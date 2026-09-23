@@ -10,6 +10,7 @@ func AddInventaire(s *Personnage, item string) {
 	s.Inventaire = append(s.Inventaire, item)
 	fmt.Println("Vous avez obtenu :", item)
 }
+
 func Marchand(s *Personnage, reader *bufio.Reader) {
 	fmt.Println("\n===== MARCHAND =====")
 	fmt.Println("1. Kit medical (gratuit)")

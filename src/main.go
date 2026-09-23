@@ -19,6 +19,7 @@ func main() {
 		fmt.Println("2. Acceder a l'inventaire")
 		fmt.Println("3. Acceder au marchand")
 		fmt.Println("4. Quitter")
+		fmt.Println("5. Entrainement")
 		fmt.Print(" Votre choix: ")
 
 		choix, _ := reader.ReadString('\n')
@@ -34,6 +35,8 @@ func main() {
 			character.Marchand(monper, reader)
 		case "4":
 			fmt.Println("A Bientot !")
+		case "5":
+			character.TrainingFight(monper, reader)
 
 			return
 		default:

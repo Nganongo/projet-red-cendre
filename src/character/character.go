@@ -1,6 +1,8 @@
 package character
 
-import ("fmt")
+import (
+	"fmt"
+)
 
 type Personnage struct {
 	Nom        string
@@ -19,7 +21,7 @@ func InitCharacter(nom string) *Personnage {
 		Niveau:     1,
 		VieMax:     100,
 		VieAct:     50,
-		Inventaire: []string{"Kit médical", "Kit médical", "Kit médical"},
+		Inventaire: []string{"kit medical, kit medical, kit medical"},
 		Argent:     100,
 	}
 }
