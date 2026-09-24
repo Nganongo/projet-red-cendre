@@ -64,6 +64,7 @@ func CharacterCreation(reader *bufio.Reader) *Personnage {
 		fmt.Println("Choix invalide, Survivant par défaut.")
 		classe = "Survivant"
 		viemax = 100
+		fmt.Print(SurvivantArt)
 
 	}
 

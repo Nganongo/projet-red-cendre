@@ -45,16 +45,16 @@ func Forgeron(s *Personnage, reader *bufio.Reader) {
 		case "1":
 			fabriquerEquipement(s, "Chapeau de l'aventurier", map[string]int{
 				"Plume de Corbeau": 1,
-				"Cuir de Sanglier": 1,
+				"cuir de sanglier": 1,
 			})
 		case "2":
 			fabriquerEquipement(s, "Tunique de cuir", map[string]int{
-				"Fourrure de Loup": 2,
-				"Peau de Troll":    1,
+				"fourrure de loup": 2,
+				"peau de troll":    1,
 			})
 		case "3":
-			fabriquerEquipement(s, "Bottes renforcées", map[string]int{
-				"Cuir de Sanglier": 2,
+			fabriquerEquipement(s, "bottes renforcées", map[string]int{
+				"cuir de sanglier": 2,
 			})
 		case "4":
 			return

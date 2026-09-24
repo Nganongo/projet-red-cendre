@@ -36,6 +36,7 @@ func TrainingFight(perso *Personnage, reader *bufio.Reader) {
 	if perso.VieAct <= 0 {
 		fmt.Print(DefaiteArt)
 		fmt.Println("Vous avez été vaincu...")
+		IsDead(perso)
 	} else {
 		fmt.Print(VictoireArt)
 		fmt.Println("Vous avez vaincu le", monstre.Nom, "!")
