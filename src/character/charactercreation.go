@@ -38,6 +38,7 @@ func CharacterCreation(reader *bufio.Reader) *Personnage {
 	fmt.Println("1. Survivant (100 PV)")
 	fmt.Println("2. mutant (80 PV)")
 	fmt.Println("3. Blindé (120 PV)")
+	fmt.Println("---------------------")
 
 	choixClasse, _ := reader.ReadString('\n')
 	choixClasse = strings.TrimSpace(choixClasse)
@@ -49,14 +50,16 @@ func CharacterCreation(reader *bufio.Reader) *Personnage {
 	case "1":
 		classe = "Humain"
 		viemax = 100
+		fmt.Print(SurvivantArt)
 
 	case "2":
 		classe = "Mutant"
 		viemax = 80
-
+		fmt.Print(MutantArt)
 	case "3":
 		classe = "Blindé"
 		viemax = 120
+		fmt.Print(BlindeArt)
 	default:
 		fmt.Println("Choix invalide, Survivant par défaut.")
 		classe = "Survivant"

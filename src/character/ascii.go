@@ -12,6 +12,37 @@ const ChienCendreArt = `
      \_____/
 `
 
+const SurvivantArt = `
+     ___
+    /o o\
+   (  -  )
+    \___/
+   /| | |\
+  / | | | \    SURVIVANT
+    | | |
+   /  |  \
+`
+
+const MutantArt = `
+    .-""-.
+   / *  * \
+  |    ^   |
+   \  ~~  /
+  /\ |  | /\
+ /  \|  |/  \   MUTANT
+/            \
+`
+
+const BlindeArt = `
+   _________
+  /  [===]  \
+ |   |   |   |
+ |  _|___|_  |
+  \_/     \_/    BLINDÉ
+   |       |
+  /|       |\
+`
+
 const VictoireArt = `
   __   _____ _____ _____ ____ _____ ____  _____ 
   \ \ / /_ _|  ___|_   _/ __ \_   _|  _ \| ____|
