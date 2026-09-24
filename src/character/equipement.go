@@ -109,7 +109,7 @@ func EquiperObjet(s *Personnage, reader *bufio.Reader) {
 	}
 
 	switch nomObjet {
-	case "Chapeau de l'aventurier":
+	case "chapeau de l'aventurier":
 		if s.Equipement.Tete != "" {
 			AddInventaire(s, s.Equipement.Tete)
 		}
@@ -119,7 +119,7 @@ func EquiperObjet(s *Personnage, reader *bufio.Reader) {
 		RetirerItem(s, nomObjet, 1)
 		fmt.Println("🎩 Chapeau de l'aventurier équipé ! (+10 PV Max)")
 
-	case "Tunique de cuir":
+	case "tunique de cuir":
 		if s.Equipement.Torse != "" {
 			AddInventaire(s, s.Equipement.Torse)
 		}
@@ -129,7 +129,7 @@ func EquiperObjet(s *Personnage, reader *bufio.Reader) {
 		RetirerItem(s, nomObjet, 1)
 		fmt.Println("🥋 Tunique de cuir équipée ! (+25 PV Max)")
 
-	case "Bottes renforcées":
+	case "bottes renforcées":
 		if s.Equipement.Pieds != "" {
 			AddInventaire(s, s.Equipement.Pieds)
 		}
