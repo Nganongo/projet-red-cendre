@@ -36,7 +36,7 @@ func InitCharacter(nom string) *Personnage {
 		Niveau:        1,
 		VieMax:        100,
 		VieAct:        50,
-		Inventaire:    []string{"kit medical, kit medical, kit medical"},
+		Inventaire:    []string{"kit medical", "kit medical", "kit medical"},
 		Argent:        100,
 		InventaireMax: 10,
 		UpgradesMax:   0,

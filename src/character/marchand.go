@@ -81,8 +81,8 @@ func Marchand(s *Personnage, reader *bufio.Reader) {
 		s.Argent -= prix
 
 		if nomItem == "molotov" {
-			spellBook(s, "Boule de Feu")
-		} else if nomItem == "Augmentation d'inventaire" {
+			spellBook(s, "boule de feu")
+		} else if nomItem == "augmentation d'inventaire" {
 			UpgradeInventorySlot(s)
 		} else {
 			AddInventaire(s, nomItem)
