@@ -32,8 +32,8 @@ Projet réalisé dans le cadre du Projet RED — Ynov Campus Aix.
 ## Installation
 
 ```bash
-git clone https://github.com/Nganongo/projet-red-personnage-pokemon.git
-cd projet-red-personnage-pokemon
+git clone https://github.com/Nganongo/projet-red_CENDRE.git
+cd projet-red_CENDRE
 ```
 
 ## Lancement
